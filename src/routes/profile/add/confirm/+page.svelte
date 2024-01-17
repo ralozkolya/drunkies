@@ -7,7 +7,13 @@
 
 	const drink: Drink | null = data.drink;
 
-	const icons: Icon[] = ['wine-glass', 'whiskey-glass', 'martini-glass-citrus', 'beer-mug-empty'];
+	const icons: Icon[] = [
+		'wine-glass',
+		'whiskey-glass',
+		'martini-glass-citrus',
+		'beer-mug-empty',
+		'glass-water'
+	];
 
 	const previousValues = form?.data;
 	const errors = form?.errors;

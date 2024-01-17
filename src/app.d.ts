@@ -15,9 +15,14 @@ declare global {
 		// interface Platform {}
 	}
 
-	type Icon = 'wine-glass' | 'whiskey-glass' | 'martini-glass-citrus' | 'beer-mug-empty';
+	type Icon =
+		| 'wine-glass'
+		| 'whiskey-glass'
+		| 'martini-glass-citrus'
+		| 'beer-mug-empty'
+		| 'glass-water';
 	interface Drink {
-		id: string;
+		id: number;
 		name: string;
 		alcohol: number;
 		volume: number;

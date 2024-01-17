@@ -31,6 +31,10 @@
 		</button>
 	</div>
 
+	{#if !log.length}
+		<h2 class="text-xl text-center">Nothing here yet</h2>
+	{/if}
+
 	{#each Object.keys(grouped) as user}
 		<div class="overflow-x-scroll mb-4">
 			<table class="table">

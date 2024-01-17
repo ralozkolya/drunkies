@@ -25,7 +25,13 @@ export const actions = {
 				name: z.string().max(256),
 				alcohol: z.number().positive().max(100),
 				volume: z.number().positive().max(10000),
-				icon: z.enum(['wine-glass', 'whiskey-glass', 'martini-glass-citrus', 'beer-mug-empty'])
+				icon: z.enum([
+					'wine-glass',
+					'whiskey-glass',
+					'martini-glass-citrus',
+					'beer-mug-empty',
+					'glass-water'
+				])
 			}).parse(data);
 		} catch (error) {
 			type Map = { [key: string]: string };
@@ -47,6 +53,6 @@ export const actions = {
 			await supabase.from('drinks').insert(data);
 		}
 
-		redirect(302, '/profile/add');
+		redirect(302, '/profile/log');
 	}
 };
