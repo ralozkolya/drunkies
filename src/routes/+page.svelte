@@ -1,4 +1,4 @@
-<main class="flex flex-col items-center justify-center min-h-svh">
+<main class="flex flex-col items-center justify-center">
 	<!-- <h1 class="text-4xl mb-8">Track your alcohol intake</h1> -->
 	<form method="post" action="/login" class="w-1/3">
 		<label>

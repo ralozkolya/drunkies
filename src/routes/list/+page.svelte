@@ -1,21 +1,16 @@
-<main class="flex items-center justify-center">
-	<div class="flex flex-col gap-4">
-		<div class="flex gap-4">
-			<a href="/add?drink=beer">Beer</a>
-			<a href="/add?drink=wine">Wine</a>
-		</div>
-		<div class="flex gap-4">
-			<a href="/add?drink=cocktail">Cocktail</a>
-			<a href="/add?drink=shot">Shot</a>
-		</div>
-	</div>
-</main>
+<script lang="ts">
+	import Drinks from './drinks.svelte';
 
-<style>
-	a {
-		@apply btn btn-neutral btn-lg;
-		flex-basis: 45%;
-		flex-shrink: 0;
-		flex-grow: 1;
-	}
-</style>
+	export let data;
+
+	const { drinks } = data;
+
+	const predefined = drinks.filter((drink) => !drink.user_id);
+	const custom = drinks.filter((drink) => drink.user_id);
+</script>
+
+<main class="flex-col gap-8">
+	<h1 class="text-4xl">Choose a drink to log:</h1>
+	<Drinks title="Predefined drinks" drinks={predefined} />
+	<Drinks title="Custom drinks" drinks={custom} showAddButton />
+</main>

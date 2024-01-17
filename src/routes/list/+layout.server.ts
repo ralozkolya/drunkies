@@ -1,8 +1,14 @@
-export async function load({ locals: { user, supabase } }) {
-	const { data: drinks = [] } = await supabase.from('drinks').select();
+export type Drink = {
+	id: string;
+	name: string;
+	alcohol: number;
+	volume: number;
+	user_id: string;
+	icon: 'wine-glass' | 'whiskey-glass' | 'martini-glass-citrus' | 'beer-mug-empty';
+};
 
-	return {
-		drinks,
-		user
-	};
-}
+export const load = async ({ locals: { supabase } }) => {
+	const response = await supabase.from('drinks').select<'drinks', Drink>();
+
+	return { drinks: response.data ?? [] };
+};
