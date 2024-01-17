@@ -12,7 +12,7 @@
 				autofocus
 			/>
 		</label>
-		<button class="btn btn-neutral w-full">Sign in</button>
+		<button class="btn btn-neutral w-full">Sign in with Magic Link</button>
 	</form>
 </main>
 
