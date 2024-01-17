@@ -24,7 +24,7 @@
 </script>
 
 <main class="block">
-	<div class="flex justify-between items-center mb-4">
+	<div class="flex justify-between items-center mb-4 px-4">
 		<h1 class="text-2xl font-bold">Log</h1>
 		<button aria-label="reload" class="btn btn-neutral" on:click={() => invalidateAll()}>
 			<i class="fas fa-rotate-right" />
@@ -39,19 +39,19 @@
 						<th colspan="3" class="text-xl capitalize">{user}</th>
 					</tr>
 					<tr>
-						<th>Drink</th>
-						<th>Volume</th>
-						<th>Alcohol</th>
-						<th>Calories</th>
+						<th class="w-2/5">Drink</th>
+						<th class="w-1/5 text-right">Volume</th>
+						<th class="w-1/5 text-right">Alcohol</th>
+						<th class="w-1/5 text-right">Calories</th>
 					</tr>
 				</thead>
 				<tbody>
 					{#each grouped[user] as entry}
 						<tr>
-							<td>{entry.name}</td>
-							<td>{entry.volume / 1000} l</td>
-							<td>{entry.alcohol / 1000} l</td>
-							<td>{Math.round(entry.alcohol * 7)} kcal</td>
+							<td class="w-2/5">{entry.name}</td>
+							<td class="w-1/5 text-right">{entry.volume / 1000} l</td>
+							<td class="w-1/5 text-right">{entry.alcohol / 1000} l</td>
+							<td class="w-1/5 text-right">{Math.round(entry.alcohol * 7)} kcal</td>
 						</tr>
 					{/each}
 				</tbody>
