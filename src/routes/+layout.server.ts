@@ -4,7 +4,7 @@ const unauthUrls = new Set(['/', '/login']);
 
 export const load = ({ locals: { user }, url }) => {
 	if (user && unauthUrls.has(url.pathname)) {
-		return redirect(307, '/list');
+		return redirect(302, '/profile/add');
 	}
 
 	return { user };

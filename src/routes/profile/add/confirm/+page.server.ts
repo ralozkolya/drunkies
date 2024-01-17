@@ -47,6 +47,6 @@ export const actions = {
 			await supabase.from('drinks').insert(data);
 		}
 
-		redirect(302, '/list');
+		redirect(302, '/profile/add');
 	}
 };

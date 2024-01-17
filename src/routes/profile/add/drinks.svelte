@@ -6,15 +6,15 @@
 
 {#if drinks.length || showAddButton}
 	<h2 class="text-2xl">{title}</h2>
-	<div class="grid grid-cols-2 lg:grid-cols-4 gap-4 grid-flow-col">
+	<div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
 		{#each drinks as drink}
-			<a href="/list/add?drink={drink.id}">
+			<a href="/profile/add/confirm?drink={drink.id}">
 				<i class="fas fa-{drink.icon}" />
 				{drink.name}
 			</a>
 		{/each}
 		{#if showAddButton}
-			<a href="/list/add">
+			<a href="/profile/add/confirm">
 				<i class="fas fa-plus" />
 				Add new
 			</a>
