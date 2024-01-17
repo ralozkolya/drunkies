@@ -13,10 +13,5 @@ body {
 }
 
 main {
-	display: flex;
-	gap: 1rem;
-	align-items: center;
-	justify-content: center;
-	flex-grow: 1;
-	flex-wrap: wrap;
+	@apply p-4 gap-4 flex items-center justify-center flex-grow flex-wrap;
 }

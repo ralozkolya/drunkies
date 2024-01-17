@@ -1,6 +1,4 @@
 <script lang="ts">
-	import type { Drink } from './+layout.server';
-
 	export let drinks: Drink[] = [];
 	export let title: string;
 	export let showAddButton = false;

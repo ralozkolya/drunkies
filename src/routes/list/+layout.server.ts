@@ -1,13 +1,10 @@
-export type Drink = {
-	id: string;
-	name: string;
-	alcohol: number;
-	volume: number;
-	user_id: string;
-	icon: 'wine-glass' | 'whiskey-glass' | 'martini-glass-citrus' | 'beer-mug-empty';
-};
+import { redirect } from '@sveltejs/kit';
 
-export const load = async ({ locals: { supabase } }) => {
+export const load = async ({ locals: { supabase, user } }) => {
+	if (!user) {
+		return redirect(302, '/');
+	}
+
 	const response = await supabase.from('drinks').select<'drinks', Drink>();
 
 	return { drinks: response.data ?? [] };

@@ -14,6 +14,16 @@ declare global {
 		// interface PageState {}
 		// interface Platform {}
 	}
+
+	type Icon = 'wine-glass' | 'whiskey-glass' | 'martini-glass-citrus' | 'beer-mug-empty';
+	interface Drink {
+		id: string;
+		name: string;
+		alcohol: number;
+		volume: number;
+		user_id: string;
+		icon: Icon;
+	}
 }
 
 export {};
