@@ -1,3 +1,4 @@
+import { REDIRECT } from '$env/static/private';
 import { type Actions } from '@sveltejs/kit';
 
 export const actions = {
@@ -7,7 +8,7 @@ export const actions = {
 		const { error } = await locals.supabase.auth.signInWithOtp({
 			email: email as string,
 			options: {
-				emailRedirectTo: 'http://localhost:5173/callback'
+				emailRedirectTo: REDIRECT
 			}
 		});
 

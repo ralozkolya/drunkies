@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Error from './error.svelte';
+	import Error from './error-message.svelte';
 
 	export let name: string;
 	export let error: string | undefined;
