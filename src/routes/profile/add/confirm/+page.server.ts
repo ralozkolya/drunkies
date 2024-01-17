@@ -23,8 +23,8 @@ export const actions = {
 		try {
 			z.object({
 				name: z.string().max(256),
-				alcohol: z.number().positive().max(100),
-				volume: z.number().positive().max(10000),
+				alcohol: z.number().nonnegative().max(100),
+				volume: z.number().nonnegative().max(10000),
 				icon: z.enum([
 					'wine-glass',
 					'whiskey-glass',
