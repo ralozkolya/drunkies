@@ -4,16 +4,19 @@
 	import Table from './table.svelte';
 
 	export let data;
+	// let detailsOpen = false;
 
-	const log = data.log ?? [];
+	$: log = data.log ?? [];
 
-	const grouped = log?.reduce((map, entry) => {
+	$: grouped = log?.reduce((map, entry) => {
 		map[getName(entry.user_id)] ??= [];
 		map[getName(entry.user_id)].push(entry);
 		return map;
 	}, {});
 
-	const name = getName(data.user?.id as string);
+	$: name = getName(data.user?.id as string);
+
+	// $: console.log(detailsOpen);
 </script>
 
 <main class="block">
@@ -31,4 +34,12 @@
 	{#each Object.keys(grouped) as user}
 		<Table data={grouped[user]} username={user} owner={user === name} />
 	{/each}
+
+	<!-- <div class="collapse collapse-arrow bg-base-200 mt-8">
+		<input type="checkbox" bind:checked={detailsOpen} />
+		<div class="collapse-title text-xl font-medium">Show the complete log</div>
+		<div class="collapse-content">
+			<span class="loading loading-spinner loading-lg" />
+		</div>
+	</div> -->
 </main>
