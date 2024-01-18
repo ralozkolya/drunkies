@@ -38,15 +38,20 @@
 					></path></svg
 				>
 			</button>
-			<ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-neutral rounded-box w-52">
-				<li><span class="capitalize px-4 text-sm">{name}</span></li>
-				<li><a href="/profile/log">Log</a></li>
-				<li>
-					<form method="post" action="/?/logout">
-						<button>Logout</button>
-					</form>
-				</li>
-			</ul>
+			<div
+				tabindex="0"
+				class="dropdown-content z-[1] menu p-2 shadow bg-neutral rounded-box w-52 text-lg"
+			>
+				<span class="capitalize p-4 text-sm">{name}</span>
+				<ul>
+					<li><a href="/profile/log">Log</a></li>
+					<li>
+						<form method="post" action="/?/logout">
+							<button>Logout</button>
+						</form>
+					</li>
+				</ul>
+			</div>
 		</div>
 	{:else}
 		<a href="/" class="btn btn-ghost">Login</a>
