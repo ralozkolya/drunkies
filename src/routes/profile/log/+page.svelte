@@ -4,7 +4,8 @@
 	import Table from './table.svelte';
 
 	export let data;
-	// let detailsOpen = false;
+
+	let loading: Promise<void>;
 
 	$: log = data.log ?? [];
 
@@ -14,16 +15,22 @@
 		return map;
 	}, {});
 
-	$: name = getName(data.user?.id as string);
-
-	// $: console.log(detailsOpen);
+	const name = getName(data.user?.id as string);
 </script>
 
 <main class="block">
 	<div class="flex justify-between items-center mb-4 px-4">
 		<h1 class="text-2xl font-bold">Log</h1>
-		<button aria-label="reload" class="btn btn-neutral" on:click={() => invalidateAll()}>
-			<i class="fas fa-rotate-right" />
+		<button
+			aria-label="reload"
+			class="btn btn-neutral"
+			on:click={() => (loading = invalidateAll())}
+		>
+			{#await loading}
+				<span class="loading loading-spinner loading-xs" />
+			{:then}
+				<i class="fas fa-rotate-right" />
+			{/await}
 		</button>
 	</div>
 
@@ -34,12 +41,4 @@
 	{#each Object.keys(grouped) as user}
 		<Table data={grouped[user]} username={user} owner={user === name} />
 	{/each}
-
-	<!-- <div class="collapse collapse-arrow bg-base-200 mt-8">
-		<input type="checkbox" bind:checked={detailsOpen} />
-		<div class="collapse-title text-xl font-medium">Show the complete log</div>
-		<div class="collapse-content">
-			<span class="loading loading-spinner loading-lg" />
-		</div>
-	</div> -->
 </main>
