@@ -14,5 +14,5 @@ body {
 }
 
 main {
-	@apply p-4 gap-4 flex items-center justify-center flex-grow flex-wrap;
+	@apply p-4 gap-4 flex items-center justify-center flex-grow flex-wrap pt-[96px] sm:pt-[80px];
 }

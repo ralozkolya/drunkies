@@ -24,7 +24,7 @@
 		<h1 class="text-2xl font-bold">Log</h1>
 		<button
 			aria-label="reload"
-			class="btn btn-neutral"
+			class="btn btn-neutral w-[50px]"
 			on:click={() => (loading = invalidateAll())}
 		>
 			{#await loading}

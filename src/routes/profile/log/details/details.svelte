@@ -22,9 +22,9 @@
 <div class="collapse collapse-arrow bg-base-200 mt-8">
 	<input type="checkbox" bind:checked={detailsOpen} />
 	<div class="collapse-title text-xl font-medium">Show the complete log</div>
-	<div class="collapse-content">
+	<div class="collapse-content w-full max-w-full overflow-x-auto">
 		{#await data}
-			<span class="loading loading-spinner loading-lg" />
+			<span class="loading loading-spinner" />
 		{:then log}
 			<table class="table">
 				<thead>

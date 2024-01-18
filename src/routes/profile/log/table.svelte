@@ -8,7 +8,7 @@
 	const totalAlcohol = data.reduce((a, b) => a + b.alcohol, 0);
 </script>
 
-<div class="overflow-x-scroll mb-4">
+<div class="overflow-x-auto mb-4">
 	<table class="table">
 		<thead>
 			<tr>
