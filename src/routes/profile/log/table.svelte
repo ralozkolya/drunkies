@@ -4,7 +4,7 @@
 	export let owner = false;
 
 	const totalAlcohol = data.reduce((a, b) => a + b.alcohol, 0);
-	const ALCOHOL_DENSITY = 0.79;
+	const ALCOHOL_DENSITY = 5.53;
 </script>
 
 <div class="overflow-x-scroll mb-4">
