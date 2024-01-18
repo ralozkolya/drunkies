@@ -13,7 +13,8 @@
 		'whiskey-glass',
 		'martini-glass-citrus',
 		'beer-mug-empty',
-		'glass-water'
+		'glass-water',
+		'bottle-droplet'
 	];
 
 	const previousValues = form?.data;
@@ -29,7 +30,7 @@
 </script>
 
 <main>
-	<form method="post" class="md:w-1/3 flex flex-col gap-4" use:enhance>
+	<form method="post" class="md:w-1/2 lg:w-1/3 flex flex-col gap-4" use:enhance>
 		<Input error={errors?.name} label="Name" name="name" bind:value={name} />
 		<Input
 			type="number"

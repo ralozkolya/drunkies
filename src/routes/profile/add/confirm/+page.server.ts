@@ -32,7 +32,8 @@ export const actions = {
 					'whiskey-glass',
 					'martini-glass-citrus',
 					'beer-mug-empty',
-					'glass-water'
+					'glass-water',
+					'bottle-droplet'
 				])
 			}).parse(data);
 		} catch (error) {

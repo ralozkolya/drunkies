@@ -22,7 +22,8 @@ declare global {
 		| 'whiskey-glass'
 		| 'martini-glass-citrus'
 		| 'beer-mug-empty'
-		| 'glass-water';
+		| 'glass-water'
+		| 'bottle-droplet';
 	interface Drink {
 		id: number;
 		name: string;
