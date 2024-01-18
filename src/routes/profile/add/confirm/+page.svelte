@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { getDate } from '../../../../util/date';
+	import { enhance } from '$app/forms';
 	import Error from './error-message.svelte';
 	import Input from './input.svelte';
 
@@ -29,7 +29,7 @@
 </script>
 
 <main>
-	<form method="post" class="md:w-1/3 flex flex-col gap-4">
+	<form method="post" class="md:w-1/3 flex flex-col gap-4" use:enhance>
 		<Input error={errors?.name} label="Name" name="name" bind:value={name} />
 		<Input
 			type="number"

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { enhance } from '$app/forms';
 	import type { User } from '@supabase/supabase-js';
 	import { getName } from '../util/name';
 
@@ -15,7 +16,7 @@
 		{#if user}
 			<span class="capitalize px-4 text-sm">{name}</span>
 			<a class="btn btn-ghost" href="/profile/log">Log</a>
-			<form method="post" action="/?/logout">
+			<form method="post" action="/?/logout" use:enhance>
 				<button class="btn btn-ghost">Logout</button>
 			</form>
 		{:else}
@@ -46,7 +47,7 @@
 				<ul>
 					<li><a href="/profile/log">Log</a></li>
 					<li>
-						<form method="post" action="/?/logout">
+						<form method="post" action="/?/logout" use:enhance>
 							<button>Logout</button>
 						</form>
 					</li>
@@ -54,6 +55,6 @@
 			</div>
 		</div>
 	{:else}
-		<a href="/" class="btn btn-ghost">Login</a>
+		<a href="/" class="btn btn-ghost sm:hidden">Login</a>
 	{/if}
 </div>
