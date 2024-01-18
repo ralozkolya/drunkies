@@ -19,7 +19,7 @@
 	const name = getName(data.user?.id as string);
 </script>
 
-<main class="block">
+<main class="block container mx-auto">
 	<div class="flex justify-between items-center mb-4 px-4">
 		<h1 class="text-2xl font-bold">Log</h1>
 		<button
