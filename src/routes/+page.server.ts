@@ -19,7 +19,7 @@ export const actions = {
 		redirect(302, '/login');
 	},
 	logout: async (event) => {
-		await event.locals.supabase.auth.signOut();
+		await event.locals.supabase.auth.signOut({ scope: 'local' });
 		redirect(302, '/');
 	}
 };
