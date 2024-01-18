@@ -11,7 +11,7 @@ export default defineConfig({
 				name: 'Drunkies',
 				short_name: 'drunkies',
 				description: 'Webapp for alcohol consumption tracking',
-				theme_color: '#fff',
+				theme_color: '#000',
 				icons: [
 					{
 						src: 'pwa-192x192.png',
@@ -31,7 +31,8 @@ export default defineConfig({
 					{
 						src: 'pwa-1024x1024.png',
 						sizes: '1024x1024',
-						type: 'image/png'
+						type: 'image/png',
+						purpose: 'maskable'
 					}
 				]
 			}
