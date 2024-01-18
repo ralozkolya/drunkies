@@ -25,7 +25,7 @@
 		max={'date' === type ? getDate() : null}
 		{placeholder}
 		bind:value
-		on:input|once={() => (error = undefined)}
+		on:input={() => (error = undefined)}
 		{required}
 	/>
 	<Error message={error} />

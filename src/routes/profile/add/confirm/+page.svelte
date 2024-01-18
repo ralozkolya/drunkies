@@ -17,7 +17,7 @@
 	];
 
 	const previousValues = form?.data;
-	const errors = form?.errors;
+	$: errors = form?.errors;
 
 	let name = previousValues?.name ?? drink?.name ?? '';
 	let alcohol = previousValues?.alcohol ?? drink?.alcohol ?? '';
