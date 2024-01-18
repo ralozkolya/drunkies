@@ -8,7 +8,7 @@
 </script>
 
 <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-<nav class="navbar bg-base-100 fixed z-10">
+<nav class="navbar bg-base-200 fixed z-10">
 	<div class="flex-1">
 		<a href="/" class="btn btn-ghost text-xl">Drunkies</a>
 	</div>
