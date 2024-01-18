@@ -5,7 +5,7 @@
 	export let data: Entry[];
 	export let owner = false;
 
-	const totalAlcohol = data.reduce((a, b) => a + b.alcohol, 0);
+	$: totalAlcohol = data.reduce((a, b) => a + b.alcohol, 0);
 </script>
 
 <div class="overflow-x-auto mb-4">
