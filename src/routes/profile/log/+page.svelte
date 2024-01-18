@@ -6,7 +6,7 @@
 
 	const log = data.log ?? [];
 
-	const name = (seed: string) => {
+	const getName = (seed: string) => {
 		const config: Config = {
 			dictionaries: [adjectives, animals],
 			length: 2,
@@ -17,10 +17,12 @@
 	};
 
 	const grouped = log?.reduce((map, entry) => {
-		map[name(entry.user_id)] ??= [];
-		map[name(entry.user_id)].push(entry);
+		map[getName(entry.user_id)] ??= [];
+		map[getName(entry.user_id)].push(entry);
 		return map;
 	}, {});
+
+	const name = getName(data.user?.id as string);
 </script>
 
 <main class="block">
@@ -40,7 +42,12 @@
 			<table class="table">
 				<thead>
 					<tr>
-						<th colspan="3" class="text-xl capitalize">{user}</th>
+						<th colspan="3" class="text-xl capitalize">
+							{user}
+							{#if user === name}
+								(You)
+							{/if}
+						</th>
 					</tr>
 					<tr>
 						<th class="w-2/5">Drink</th>

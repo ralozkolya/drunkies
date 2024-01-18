@@ -24,8 +24,6 @@
 	let icon = previousValues?.icon ?? drink?.icon ?? icons[0];
 
 	let save: boolean = !drink;
-
-	$: console.log(name, alcohol, volume);
 </script>
 
 <main>
