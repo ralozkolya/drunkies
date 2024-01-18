@@ -30,6 +30,12 @@ declare global {
 		created_at: string;
 		icon: Icon;
 	}
+
+	interface Entry {
+		name: string;
+		volume: number;
+		alcohol: number;
+	}
 }
 
 export {};
