@@ -14,7 +14,7 @@
 			</a>
 		{/each}
 		{#if showAddButton}
-			<a href="/profile/add/confirm">
+			<a href="/profile/add/confirm" class="!btn-outline">
 				<i class="fas fa-plus" />
 				Add new
 			</a>
