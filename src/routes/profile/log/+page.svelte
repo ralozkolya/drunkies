@@ -1,20 +1,10 @@
 <script lang="ts">
 	import { invalidateAll } from '$app/navigation';
-	import { adjectives, animals, uniqueNamesGenerator, type Config } from 'unique-names-generator';
+	import { getName } from '../../../util/name.js';
 
 	export let data;
 
 	const log = data.log ?? [];
-
-	const getName = (seed: string) => {
-		const config: Config = {
-			dictionaries: [adjectives, animals],
-			length: 2,
-			separator: ' ',
-			seed
-		};
-		return uniqueNamesGenerator(config);
-	};
 
 	const grouped = log?.reduce((map, entry) => {
 		map[getName(entry.user_id)] ??= [];
