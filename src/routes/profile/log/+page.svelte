@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { invalidateAll } from '$app/navigation';
 	import { getName } from '../../../util/name.js';
+	import Details from './details/details.svelte';
 	import Table from './table.svelte';
 
 	export let data;
@@ -41,4 +42,6 @@
 	{#each Object.keys(grouped) as user}
 		<Table data={grouped[user]} username={user} owner={user === name} />
 	{/each}
+
+	<Details />
 </main>

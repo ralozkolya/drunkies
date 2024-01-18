@@ -1,10 +1,11 @@
 <script lang="ts">
+	import { getCalories } from '../../../util/cal';
+
 	export let username: string;
 	export let data: Entry[];
 	export let owner = false;
 
 	const totalAlcohol = data.reduce((a, b) => a + b.alcohol, 0);
-	const ALCOHOL_DENSITY = 5.53;
 </script>
 
 <div class="overflow-x-scroll mb-4">
@@ -31,14 +32,13 @@
 					<td class="w-2/5">{entry.name}</td>
 					<td class="w-1/5 text-right">{entry.volume / 1000} l</td>
 					<td class="w-1/5 text-right">{entry.alcohol / 1000} l</td>
-					<td class="w-1/5 text-right">{Math.round(entry.alcohol * ALCOHOL_DENSITY)} kcal</td>
+					<td class="w-1/5 text-right">{getCalories(entry.alcohol)} kcal</td>
 				</tr>
 			{/each}
 			<tr>
 				<td colspan="2" class="w-3/5 font-bold">Total</td>
 				<td class="w-1/5 text-right font-bold">{totalAlcohol / 1000} l</td>
-				<td class="w-1/5 text-right font-bold">{Math.round(totalAlcohol * ALCOHOL_DENSITY)} kcal</td
-				>
+				<td class="w-1/5 text-right font-bold">{getCalories(totalAlcohol)} kcal</td>
 			</tr>
 		</tbody>
 	</table>
