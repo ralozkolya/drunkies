@@ -27,6 +27,7 @@ declare global {
 		alcohol: number;
 		volume: number;
 		user_id: string;
+		created_at: string;
 		icon: Icon;
 	}
 }

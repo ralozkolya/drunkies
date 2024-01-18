@@ -1,13 +1,18 @@
 <script lang="ts">
+	import { getDate } from '../../../../util/date';
 	import Error from './error-message.svelte';
 
 	export let name: string;
 	export let error: string | undefined;
-	export let value: string | number = '';
+	export let value: string | number | Date = '';
 	export let label = name;
 	export let placeholder = label;
 	export let required = true;
-	export let type: 'text' | 'number' = 'text';
+	export let type: 'text' | 'number' | 'date' = 'text';
+
+	if (value instanceof Date) {
+		value = getDate(value);
+	}
 </script>
 
 <label>
@@ -17,6 +22,7 @@
 		{name}
 		class="input input-bordered w-full my-4"
 		class:border-error={error}
+		max={'date' === type ? getDate() : null}
 		{placeholder}
 		bind:value
 		on:input|once={() => (error = undefined)}

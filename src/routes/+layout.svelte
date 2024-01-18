@@ -14,3 +14,12 @@
 <Navbar {user} />
 
 <slot />
+
+<footer class="p-8 flex justify-center gap-8 text-sm">
+	<a href="https://github.com/ralozkolya/drunkies" target="_blank" rel="noreferrer">
+		<i class="fab fa-github" /> Source
+	</a>
+	<a href="https://youtu.be/dQw4w9WgXcQ" target="_blank" rel="noreferrer">
+		<i class="fas fa-shield-halved" /> Privacy policy
+	</a>
+</footer>

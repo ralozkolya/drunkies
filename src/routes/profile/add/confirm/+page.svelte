@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { getDate } from '../../../../util/date';
 	import Error from './error-message.svelte';
 	import Input from './input.svelte';
 
@@ -21,6 +22,7 @@
 	let name = previousValues?.name ?? drink?.name ?? '';
 	let alcohol = previousValues?.alcohol ?? drink?.alcohol ?? '';
 	let volume = previousValues?.volume ?? drink?.volume ?? '';
+	let created_at = previousValues?.created_at ?? new Date();
 	let icon = previousValues?.icon ?? drink?.icon ?? icons[0];
 
 	let save: boolean = !drink;
@@ -42,6 +44,13 @@
 			label="Volume (ml)"
 			name="volume"
 			bind:value={volume}
+		/>
+		<Input
+			type="date"
+			error={errors?.created_at}
+			label="Date"
+			name="created_at"
+			bind:value={created_at}
 		/>
 		<span class="cursor-pointer">Icon:</span>
 		<div class="join w-full my-4">

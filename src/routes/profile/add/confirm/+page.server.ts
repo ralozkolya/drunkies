@@ -17,6 +17,7 @@ export const actions = {
 			name: String(formData.get('name')),
 			alcohol: Number(formData.get('alcohol')),
 			volume: Number(formData.get('volume')),
+			created_at: new Date(formData.get('created_at') as string),
 			icon: String(formData.get('icon'))
 		};
 
@@ -25,6 +26,7 @@ export const actions = {
 				name: z.string().max(256),
 				alcohol: z.number().nonnegative().max(100),
 				volume: z.number().nonnegative().max(10000),
+				created_at: z.date().max(new Date()).optional(),
 				icon: z.enum([
 					'wine-glass',
 					'whiskey-glass',
