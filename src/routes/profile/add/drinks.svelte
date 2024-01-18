@@ -25,11 +25,11 @@
 <style>
 	a {
 		@apply btn btn-neutral btn-lg;
-		@apply flex-col gap-4 lg:gap-8;
+		@apply flex-col sm:gap-4 lg:gap-8;
 		@apply w-[45vw] sm:w-[200px] aspect-[3/2] lg:aspect-[4/3] h-auto;
 	}
 
 	i {
-		@apply text-xl lg:text-4xl;
+		@apply text-2xl lg:text-4xl;
 	}
 </style>
