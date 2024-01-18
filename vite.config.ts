@@ -6,27 +6,31 @@ export default defineConfig({
 	plugins: [
 		sveltekit(),
 		SvelteKitPWA({
-			includeAssets: ['pwa-1024x1024.png', 'favicon.svg'],
+			includeAssets: ['favicon.svg'],
 			manifest: {
 				name: 'Drunkies',
 				short_name: 'drunkies',
 				description: 'Webapp for alcohol consumption tracking',
-				theme_color: '#000',
+				theme_color: '#1d232a',
+				background_color: '#1d232a',
 				icons: [
 					{
 						src: 'pwa-192x192.png',
 						sizes: '192x192',
-						type: 'image/png'
+						type: 'image/png',
+						purpose: 'maskable'
 					},
 					{
 						src: 'pwa-256x256.png',
 						sizes: '256x256',
-						type: 'image/png'
+						type: 'image/png',
+						purpose: 'maskable'
 					},
 					{
 						src: 'pwa-512x512.png',
 						sizes: '512x512',
-						type: 'image/png'
+						type: 'image/png',
+						purpose: 'maskable'
 					},
 					{
 						src: 'pwa-1024x1024.png',
