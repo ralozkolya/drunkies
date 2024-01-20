@@ -2,9 +2,6 @@
 	import '../app.css';
 	import type { LayoutData } from './$types';
 	import Navbar from './navbar.svelte';
-	import { pwaInfo } from 'virtual:pwa-info';
-
-	$: webManifestLink = pwaInfo ? pwaInfo.webManifest.linkTag : '';
 
 	export let data: LayoutData;
 	const { user } = data;
@@ -12,8 +9,6 @@
 
 <svelte:head>
 	<title>Drunkies</title>
-
-	{@html webManifestLink}
 </svelte:head>
 
 <Navbar {user} />

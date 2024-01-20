@@ -7,6 +7,7 @@ export default defineConfig({
 		sveltekit(),
 		SvelteKitPWA({
 			includeAssets: ['favicon.svg'],
+
 			manifest: {
 				name: 'Drunkies',
 				short_name: 'Drunkies',
@@ -39,6 +40,9 @@ export default defineConfig({
 						purpose: 'maskable'
 					}
 				]
+			},
+			devOptions: {
+				enabled: true
 			}
 		})
 	]
