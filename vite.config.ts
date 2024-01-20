@@ -9,7 +9,7 @@ export default defineConfig({
 			includeAssets: ['favicon.svg'],
 			manifest: {
 				name: 'Drunkies',
-				short_name: 'drunkies',
+				short_name: 'Drunkies',
 				description: 'Webapp for alcohol consumption tracking',
 				theme_color: '#1d232a',
 				background_color: '#1d232a',
