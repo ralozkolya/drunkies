@@ -1,29 +1,26 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { getCalories } from '../../../../util/cal';
+	import Row from './row.svelte';
 
 	let page = 1;
 	let data: Drink[] = [];
 	let loading = false;
 	let finished = false;
 
-	const retrieve = async (page = 1) => {
+	const retrieve = async (page = 1, complete = false) => {
 		loading = true;
 		try {
-			const response = await fetch(`/profile/log/details?page=${page}`);
+			const params = new URLSearchParams({ page: String(page) });
+			if (complete) params.append('complete', '1');
+
+			const response = await fetch(`/profile/log/details?${params}`);
 			const { data: parsed, perPage } = await response.json();
-			data = [...data, ...parsed];
+			data = [...(complete ? [] : data), ...parsed];
 			finished = perPage !== parsed.length;
 		} catch (error) {
 			console.error(error);
 		}
 		loading = false;
-	};
-
-	const format = (date: string) => {
-		return new Intl.DateTimeFormat(undefined, {
-			dateStyle: 'short'
-		}).format(new Date(date));
 	};
 
 	onMount(() => {
@@ -51,17 +48,12 @@
 			<th class="w-1/6 text-right">Alcohol</th>
 			<th class="w-1/6 text-right">Calories</th>
 			<th class="w-1/6 text-right">Date</th>
+			<th class="w-1/6 text-right">Actions</th>
 		</tr>
 	</thead>
 	<tbody>
-		{#each data as entry}
-			<tr>
-				<td class="w-2/6">{entry.name}</td>
-				<td class="w-1/6 text-right">{entry.volume / 1000} l</td>
-				<td class="w-1/6 text-right">{entry.alcohol / 1000} l</td>
-				<td class="w-1/6 text-right">{getCalories(entry.alcohol)} kcal</td>
-				<td class="w-1/6 text-right">{format(entry.created_at)}</td>
-			</tr>
+		{#each data as drink}
+			<Row on:deleted={() => retrieve(page, true)} {drink} />
 		{/each}
 	</tbody>
 </table>
