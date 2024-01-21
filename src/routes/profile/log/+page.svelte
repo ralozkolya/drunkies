@@ -42,7 +42,7 @@
 		<h2 class="text-xl text-center">Nothing here yet</h2>
 	{/if}
 
-	<div class="lg:grid grid-cols-[1fr_450px] gap-4">
+	<div class="lg:grid grid-cols-[1fr_450px] gap-4 lg:gap-8">
 		<div class="order-1 p-4 mb-8">
 			<Leaderboard {users} />
 		</div>
