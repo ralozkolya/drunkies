@@ -37,7 +37,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					{#each log as entry}
+					{#each log ?? [] as entry}
 						<tr>
 							<td class="w-2/6">{entry.name}</td>
 							<td class="w-1/6 text-right">{entry.volume / 1000} l</td>
