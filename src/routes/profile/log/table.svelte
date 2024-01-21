@@ -12,7 +12,7 @@
 	<table class="table">
 		<thead>
 			<tr>
-				<th colspan="3" class="text-xl capitalize" class:text-white={owner}>
+				<th colspan="3" class="text-xl capitalize text-white">
 					{username}
 					{#if owner}
 						(You)

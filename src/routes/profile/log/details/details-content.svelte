@@ -64,7 +64,9 @@
 			</tr>
 		{/each}
 	</tbody>
-	{#if loading}
-		<span class="loading loading-spinner" />
-	{/if}
 </table>
+{#if loading}
+	<div class="text-center">
+		<span class="loading loading-spinner" />
+	</div>
+{/if}

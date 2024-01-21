@@ -2,6 +2,7 @@
 	import { invalidateAll } from '$app/navigation';
 	import { getName } from '../../../util/name.js';
 	import Details from './details/details.svelte';
+	import Leaderboard from './leaderboard.svelte';
 	import Table from './table.svelte';
 
 	export let data;
@@ -15,6 +16,8 @@
 		map[getName(entry.user_id)].push(entry);
 		return map;
 	}, {});
+
+	$: users = Object.keys(grouped).map((key) => ({ name: key, data: grouped[key] }));
 
 	const name = getName(data.user?.id as string);
 </script>
@@ -39,9 +42,16 @@
 		<h2 class="text-xl text-center">Nothing here yet</h2>
 	{/if}
 
-	{#each Object.keys(grouped) as user}
-		<Table data={grouped[user]} username={user} owner={user === name} />
-	{/each}
+	<div class="lg:grid grid-cols-[1fr_450px] gap-4">
+		<div class="order-1 p-4 mb-8">
+			<Leaderboard {users} />
+		</div>
+		<div class="order-0">
+			{#each users as user}
+				<Table data={user.data} username={user.name} owner={user.name === name} />
+			{/each}
+		</div>
+	</div>
 
 	<Details />
 </main>
