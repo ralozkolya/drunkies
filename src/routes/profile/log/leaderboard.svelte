@@ -7,8 +7,8 @@
 	export let users: User[];
 
 	$: sorted = users.slice().sort((a, b) => {
-		const totalA = a.data.reduce((a, b) => a + b.alcohol, 0);
-		const totalB = b.data.reduce((a, b) => a + b.alcohol, 0);
+		const totalA = a.data.reduce((a, b) => a + b.alcohol, 0) || Infinity;
+		const totalB = b.data.reduce((a, b) => a + b.alcohol, 0) || Infinity;
 		return totalA - totalB;
 	});
 </script>
@@ -17,7 +17,7 @@
 <div class="items-end text-white hidden sm:flex">
 	{#each sorted.slice(0, 3) as user, index}
 		<div class={`flex-shrink-0 flex-grow basis-[33.33%] lo-${index}`}>
-			<h3 class="text-2xl text-center break-words capitalize mb-4 px-4">{user.name}</h3>
+			<h3 class="text-center break-words capitalize mb-4 px-4">{user.name}</h3>
 			<div
 				class={`border border-white lh-${index} flex items-end border-b justify-center text-4xl font-bold pb-4`}
 				class:border-l-0={index === 2}
