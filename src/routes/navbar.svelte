@@ -21,7 +21,7 @@
 					<button class="btn btn-ghost">Logout</button>
 				</form>
 			{:else}
-				<a href="/" class="btn btn-ghost">Login</a>
+				<a href="/profile/add" class="btn btn-ghost">Login</a>
 			{/if}
 		</div>
 		{#if user}
