@@ -11,7 +11,7 @@
 <div class="bg-base-200 fixed z-10 w-full">
 	<nav class="navbar container mx-auto px-4">
 		<div class="flex-1">
-			<a href="/" class="btn btn-ghost text-xl">Drunkies</a>
+			<a href="/profile/add" class="btn btn-ghost text-xl">Drunkies</a>
 		</div>
 		<div class="hidden sm:flex flex-none">
 			{#if user}
@@ -21,7 +21,7 @@
 					<button class="btn btn-ghost">Logout</button>
 				</form>
 			{:else}
-				<a href="/profile/add" class="btn btn-ghost">Login</a>
+				<a href="/" class="btn btn-ghost">Login</a>
 			{/if}
 		</div>
 		{#if user}
