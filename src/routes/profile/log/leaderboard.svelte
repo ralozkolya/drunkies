@@ -16,8 +16,8 @@
 <h2 class="text-xl text-white font-bold mb-4">Leaderboard</h2>
 <div class="items-end text-white hidden sm:flex">
 	{#each sorted.slice(0, 3) as user, index}
-		<div class={`flex-shrink-0 flex-grow basis-[33.33%] lo-${index}`}>
-			<h3 class="text-center break-words capitalize mb-4 px-4">{user.name}</h3>
+		<div class={`w-1/3 lo-${index}`}>
+			<h3 class="text-center break-words capitalize mb-4 px-2">{user.name}</h3>
 			<div
 				class={`border border-white lh-${index} flex items-end border-b justify-center text-4xl font-bold pb-4`}
 				class:border-l-0={index === 2}
