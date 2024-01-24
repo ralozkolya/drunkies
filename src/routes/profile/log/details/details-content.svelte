@@ -46,7 +46,6 @@
 			<th class="w-2/6">Drink</th>
 			<th class="w-1/6 text-right">Volume</th>
 			<th class="w-1/6 text-right">Alcohol</th>
-			<th class="w-1/6 text-right">Calories</th>
 			<th class="w-1/6 text-right">Date</th>
 			<th class="w-1/6 text-right">Actions</th>
 		</tr>

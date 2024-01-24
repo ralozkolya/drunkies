@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { getCalories } from '../../../util/cal';
-
 	export let username: string;
 	export let data: Entry[];
 	export let owner = false;
@@ -23,7 +21,6 @@
 				<th class="w-2/5">Drink</th>
 				<th class="w-1/5 text-right">Volume</th>
 				<th class="w-1/5 text-right">Alcohol</th>
-				<th class="w-1/5 text-right">Calories</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -32,13 +29,11 @@
 					<td class="w-2/5">{entry.name}</td>
 					<td class="w-1/5 text-right">{entry.volume / 1000} l</td>
 					<td class="w-1/5 text-right">{entry.alcohol / 1000} l</td>
-					<td class="w-1/5 text-right">{getCalories(entry.alcohol)} kcal</td>
 				</tr>
 			{/each}
 			<tr>
 				<td colspan="2" class="w-3/5 font-bold">Total</td>
 				<td class="w-1/5 text-right font-bold">{totalAlcohol / 1000} l</td>
-				<td class="w-1/5 text-right font-bold">{getCalories(totalAlcohol)} kcal</td>
 			</tr>
 		</tbody>
 	</table>
