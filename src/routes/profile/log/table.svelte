@@ -27,8 +27,8 @@
 			{#each data as entry}
 				<tr>
 					<td class="w-2/5">{entry.name}</td>
-					<td class="w-1/5 text-right">{entry.volume / 1000} l</td>
-					<td class="w-1/5 text-right">{entry.alcohol / 1000} l</td>
+					<td class="w-1/5 text-right whitespace-nowrap">{entry.volume / 1000} l</td>
+					<td class="w-1/5 text-right whitespace-nowrap">{entry.alcohol / 1000} l</td>
 				</tr>
 			{/each}
 			<tr>
