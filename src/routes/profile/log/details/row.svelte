@@ -40,7 +40,7 @@
 <tr>
 	<td class="w-2/6">{drink.name}</td>
 	<td class="w-1/6 text-right whitespace-nowrap">{drink.volume / 1000} l</td>
-	<td class="w-1/6 text-right whitespace-nowrap">{drink.alcohol / 1000} l</td>
+	<td class="w-1/6 text-right whitespace-nowrap">{(drink.volume * drink.alcohol) / 100000} l</td>
 	<td class="w-1/6 text-right">{format(drink.created_at)}</td>
 	<td class="w-1/6 text-right">
 		<button
