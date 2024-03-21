@@ -51,7 +51,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		{#each data as drink}
+		{#each data as drink (drink.id)}
 			<Row on:deleted={() => retrieve(page, true)} {drink} />
 		{/each}
 	</tbody>

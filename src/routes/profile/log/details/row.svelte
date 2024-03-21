@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
 	import { rounded } from '../../../../util/number';
+	import { fade } from 'svelte/transition';
 
 	export let drink: Drink;
 
@@ -30,7 +31,7 @@
 				console.error(error);
 			}
 			dispatch('deleted', { id: drink.id });
-			return (loading = false);
+			return (loading = clicked = false);
 		}
 
 		clicked = true;
@@ -38,7 +39,7 @@
 	};
 </script>
 
-<tr>
+<tr transition:fade>
 	<td class="w-2/6">{drink.name}</td>
 	<td class="w-1/6 text-right whitespace-nowrap">{drink.volume / 1000} l</td>
 	<td class="w-1/6 text-right whitespace-nowrap"
