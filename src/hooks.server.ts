@@ -1,8 +1,9 @@
 import { SUPABASE_KEY, SUPABASE_URL } from '$env/static/private';
+import type { Database } from '$lib/supabase';
 import { createServerClient } from '@supabase/ssr';
 
 export const handle = async ({ event, resolve }) => {
-	const supabase = createServerClient(SUPABASE_URL, SUPABASE_KEY, {
+	const supabase = createServerClient<Database>(SUPABASE_URL, SUPABASE_KEY, {
 		cookies: {
 			get: (key) => event.cookies.get(key),
 			set: (key, value, options) => {
