@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { rounded } from '../../../util/number';
+
 	export let username: string;
 	export let data: Entry[];
 	export let owner = false;
@@ -28,12 +30,12 @@
 				<tr>
 					<td class="w-2/5">{entry.name}</td>
 					<td class="w-1/5 text-right whitespace-nowrap">{entry.volume / 1000} l</td>
-					<td class="w-1/5 text-right whitespace-nowrap">{entry.alcohol / 1000} l</td>
+					<td class="w-1/5 text-right whitespace-nowrap">{rounded(entry.alcohol / 1000)} l</td>
 				</tr>
 			{/each}
 			<tr>
 				<td colspan="2" class="w-3/5 font-bold">Total</td>
-				<td class="w-1/5 text-right font-bold">{totalAlcohol / 1000} l</td>
+				<td class="w-1/5 text-right font-bold">{rounded(totalAlcohol / 1000)} l</td>
 			</tr>
 		</tbody>
 	</table>
