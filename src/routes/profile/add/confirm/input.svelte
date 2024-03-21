@@ -8,6 +8,7 @@
 	export let label = name;
 	export let placeholder = label;
 	export let required = true;
+	export let step = 1;
 	export let type: 'text' | 'number' | 'date' = 'text';
 
 	if (value instanceof Date) {
@@ -24,6 +25,7 @@
 		class:border-error={error}
 		max={'date' === type ? getDate() : null}
 		{placeholder}
+		{step}
 		bind:value
 		on:input={() => (error = undefined)}
 		{required}

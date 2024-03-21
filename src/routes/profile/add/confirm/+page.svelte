@@ -37,6 +37,7 @@
 			error={errors?.alcohol}
 			label="Alcohol content (%)"
 			name="alcohol"
+			step={0.1}
 			bind:value={alcohol}
 		/>
 		<Input
