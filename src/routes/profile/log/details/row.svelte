@@ -47,23 +47,25 @@
 	>
 	<td class="w-1/6 text-right">{format(drink.created_at)}</td>
 	<td class="w-1/6 text-right">
-		<button
-			class="btn btn-circle btn-xs"
-			class:btn-ghost={!clicked}
-			class:btn-warning={clicked}
-			disabled={loading}
-			on:click={confirm}
-		>
-			{#if loading}
-				<span class="loading loading-spinner loading-xs" />
-			{:else}
-				<i
-					class="fas fa-close text-error"
-					class:text-error={!clicked}
-					class:fa-close={!clicked}
-					class:fa-exclamation={clicked}
-				/>
-			{/if}
-		</button>
+		<div class="tooltip tooltip-left" data-tip={clicked ? 'Once more...' : 'Click twice to delete'}>
+			<button
+				class="btn btn-circle btn-xs"
+				class:btn-ghost={!clicked}
+				class:btn-warning={clicked}
+				disabled={loading}
+				on:click={confirm}
+			>
+				{#if loading}
+					<span class="loading loading-spinner loading-xs" />
+				{:else}
+					<i
+						class="fas fa-close text-error"
+						class:text-error={!clicked}
+						class:fa-close={!clicked}
+						class:fa-exclamation={clicked}
+					/>
+				{/if}
+			</button>
+		</div>
 	</td>
 </tr>
